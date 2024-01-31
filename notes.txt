@@ -1,0 +1,16 @@
+npm i axios //for easier backend communication
+npm i react-router-dom //for using multiple pages
+npm i @tanstack/react-query //for easier api calls
+
+
+git pull //to get the latest repository
+git switch -c YourBranchName // 
+// you will be transfered to the new branch 
+//after working on the code 
+//to post your work
+git add .
+git commit -m "your comment"
+git push
+git push --set-upstream origin YourBranchName // we agree to name using our own and work
+//to post your work
+//in github

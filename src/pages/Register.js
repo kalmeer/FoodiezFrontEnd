@@ -37,73 +37,61 @@ const Register = () => {
         <h2 className="text-3xl text-white font-semibold mb-6">Register</h2>
         <form onSubmit={handleFormSubmit}>
           <div className="mb-4">
-            <label
-              htmlFor="name"
-              className="block text-white text-sm font-medium mb-2"
-            >
-              Name
-            </label>
             <input
-              type="text"
-              id="name"
-              name="name"
+              type="email"
+              id="email"
+              name="email"
               onChange={handleChange}
               className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="email"
               required
             />
           </div>
           <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-white text-sm font-medium mb-2"
-            >
-              username
-            </label>
             <input
               type="username"
               id="username"
               name="username"
               onChange={handleChange}
               className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="username"
               required
             />
           </div>
           <div className="mb-4">
-            <label
-              htmlFor="password"
-              className="block text-white text-sm font-medium mb-2"
-            >
-              Password
-            </label>
             <input
               type="password"
               id="password"
               name="password"
               onChange={handleChange}
               className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="password"
               required
             />
           </div>
-          <div className="mb-6">
-            <label
-              htmlFor="image"
-              className="block text-white text-sm font-medium mb-2"
-            >
-              Profile Image
-            </label>
+          {/*  */}
+          <div className="mb-4">
             <input
-              type="file"
-              id="image"
-              name="image"
+              type="password"
+              id="password"
+              name="password"
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
+              className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="confirm password"
               required
             />
           </div>
-          <div className="flex justify-center">
+          {/*  */}
+          <div className="flex justify-center bg-orange-600 rounded-3xl">
             <button
+              style={{ width: "100%" }}
               type="submit"
-              className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
+              className="text-orange-100 hover:bg-orange-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+
+              // className="px-4 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors"
+              // {--tw bg-opacity:1;
+              // background-color: rgb(204,94,17/ var (--tw-bg-opacity));
+              // }
             >
               Register
             </button>
