@@ -6,3 +6,94 @@ body {
 .active {
   background-color: rgb(204 94 17 / var(--tw-bg-opacity));
 }
+
+body {
+  /* font-family: "Courier New", Courier, monospace; */
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 215 170 / var(--tw-bg-opacity));
+}
+
+.active {
+  /* font-family: "Courier New", Courier, monospace; */
+  background-color: rgb(204 94 17 / var(--tw-bg-opacity));
+}
+
+.login-container header {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.login-container input {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid #fed7aa;
+  border-radius: 0%;
+  background: transparent;
+  font-weight: bold;
+  color: #ffebd5;
+}
+.login-container input a:hover {
+  color: #fed7aa;
+}
+.login-container input::placeholder {
+  color: #fed7aa;
+  font-weight: bold;
+}
+
+.login-container a {
+  text-decoration: none;
+  color: #fed7aa;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #cc5e12;
+  color: #fed7aa;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-weight: bold;
+}
+
+.login-container button a {
+  text-decoration: none;
+  color: #fed7aa;
+}
+
+.login-container .transparent-button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+.login-container .transparent-button a {
+  color: #005eb8;
+  font-weight: lighter;
+}
+.login-container .transparent-button a:hover {
+  font-weight: bold;
+}
+.login-container label {
+  display: flex;
+  margin: 0px 0px 0px 10px;
+  color: #fff;
+  border-radius: 10px;
+  align-items: center;
+  font-size: small;
+  text-align: center;
+}
+
+.login-container .input-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-container input[type="file"] {
+  display: none;
+}

@@ -25,12 +25,12 @@ const Navbar = () => {
               >
                 Recipes
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 to="/users"
                 className="text-orange-100 hover:bg-orange-800 hover:text-white px-3 py-2 rounded-3xl text-xl font-medium"
               >
                 Users
-              </NavLink>
+              </NavLink> */}
 
               <>
                 <NavLink

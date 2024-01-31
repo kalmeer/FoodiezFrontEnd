@@ -25,42 +25,32 @@ const Login = () => {
     mutate();
   };
 
-  if (user) {
-  }
   return (
-    <div className="bg-orange-100 min-h-screen flex items-center justify-center absolute inset-0 z-[-1]">
-      <div className="max-w-md w-full px-6 py-8 bg-orange-500 rounded-md shadow-md">
-        <h2 className="text-3xl text-white font-semibold mb-6">Login</h2>
+    <div className="bg-orange-100 min-h-screen flex items-center justify-center font-sans login-container">
+      <div className="max-w-md w-full px-6 py-8 bg-orange-500 rounded-md shadow-md font-sans ">
+        <h2 className="text-3xl text-white font-semibold mb-6 font-sans">
+          Login
+        </h2>
         <form onSubmit={handleFormSubmit}>
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-white text-sm font-medium mb-2"
-            >
-              Email
-            </label>
+          <div className="mb-4 font-sans">
             <input
               type="email"
               name="email"
               id="email"
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 font-sans"
+              placeholder="Email"
               required
             />
           </div>
           <div className="mb-6">
-            <label
-              htmlFor="password"
-              className="block text-white text-sm font-medium mb-2"
-            >
-              Password
-            </label>
             <input
               name="password"
               type="password"
               id="password"
               onChange={handleChange}
               className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="Password"
               required
             />
           </div>
