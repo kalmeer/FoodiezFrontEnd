@@ -2,16 +2,20 @@ import React, { useContext, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { login } from "../api/auth";
 import UserContext from "../context/UserContext";
-
+import { useNavigate } from "react-router-dom";
+import Home from "./Home";
 const Login = () => {
   const [userInfo, setUserInfo] = useState({});
   const [user, setUser] = useContext(UserContext);
+  const navagaite = useNavigate;
 
   const { mutate } = useMutation({
     mutationKey: ["login"],
     mutationFn: () => login(userInfo),
     onSuccess: () => {
       alert("Login success");
+      setUser(true);
+      <Home />;
     },
   });
   const handleChange = (e) => {
@@ -20,8 +24,6 @@ const Login = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    if (!user) setUser(true);
     mutate();
   };
 
