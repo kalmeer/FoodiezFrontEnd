@@ -1,15 +1,20 @@
 import { useMutation } from "@tanstack/react-query";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { register } from "../api/auth";
+import { useNavigate } from "react-router-dom";
+import UserContext from "../context/UserContext";
 
 const Register = () => {
   const [userInfo, setUserInfo] = useState({});
+  const [user, setUser] = useContext(UserContext);
+  const navigate = useNavigate();
 
   const { mutate } = useMutation({
     mutationKey: ["register"],
     mutationFn: () => register(userInfo),
     onSuccess: () => {
       alert("success");
+      setUser(true);
     },
     onError: () => {
       alert("error");
@@ -20,10 +25,11 @@ const Register = () => {
     console.log(userInfo);
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
   };
-
+  useEffect(() => {
+    if (user) navigate("/");
+  }, [user]);
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Add register logic here
     mutate();
   };
 
@@ -34,12 +40,12 @@ const Register = () => {
         <form onSubmit={handleFormSubmit}>
           <div className="mb-4">
             <input
-              type="text"
-              id="name"
-              name="name"
+              type="email"
+              id="email"
+              name="email"
               onChange={handleChange}
               className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-              placeholder="Name"
+              placeholder="email"
               required
             />
           </div>

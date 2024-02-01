@@ -13,6 +13,10 @@ const login = async (userInfo) => {
 
 const register = async (userInfo) => {
   const { data } = await instance.post("/api/user/signup", userInfo);
+  const token = data.token;
+  if (token) {
+    saveToken(token);
+  }
   console.log(data);
   return data;
 };
