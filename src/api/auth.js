@@ -1,7 +1,13 @@
 import instance from ".";
+import { saveToken } from "./storage";
 
 const login = async (userInfo) => {
   const { data } = await instance.post("/api/user/signin", userInfo);
+  const token = data.token;
+  if (token) {
+    saveToken(token);
+  }
+  console.log(data);
   return data;
 };
 
