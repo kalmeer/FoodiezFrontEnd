@@ -7,17 +7,7 @@ body {
   background-color: rgb(204 94 17 / var(--tw-bg-opacity));
 }
 
-body {
-  /* font-family: "Courier New", Courier, monospace; */
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 215 170 / var(--tw-bg-opacity));
-}
-
-.active {
-  /* font-family: "Courier New", Courier, monospace; */
-  background-color: rgb(204 94 17 / var(--tw-bg-opacity));
-}
-
+/* Styling for form elements */
 .login-container header {
   display: block;
   margin-bottom: 10px;
@@ -40,12 +30,12 @@ body {
   color: #fed7aa;
 }
 .login-container input::placeholder {
-  color: #fed7aa;
+  color: #fed7aa; /* Change this to the color you want */
   font-weight: bold;
 }
 
 .login-container a {
-  text-decoration: none;
+  text-decoration: none; /* Removes underline */
   color: #fed7aa;
 }
 
@@ -62,7 +52,7 @@ body {
 }
 
 .login-container button a {
-  text-decoration: none;
+  text-decoration: none; /* Removes underline */
   color: #fed7aa;
 }
 
@@ -73,7 +63,7 @@ body {
 }
 
 .login-container .transparent-button a {
-  color: #005eb8;
+  color: #005eb8; /* Change this to the color you want */
   font-weight: lighter;
 }
 .login-container .transparent-button a:hover {
@@ -96,4 +86,153 @@ body {
 
 .login-container input[type="file"] {
   display: none;
+}
+
+.Navbar {
+  background-color: #fff;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: large;
+}
+
+.Navbar a {
+  text-decoration: none; /* Removes underline */
+  margin: 20px;
+  color: #1f5083;
+  font-weight: bold;
+  padding-bottom: 2px; /* Add space for the underline */
+}
+
+.Navbar a:hover {
+  border-bottom: 4px solid #005eb8; /* Adds underline on hover */
+}
+
+.recipe-container header {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.recipe-container input {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid #fed7aa;
+  border-radius: 0%;
+  background: transparent;
+  font-weight: bold;
+  color: #ffebd5;
+}
+.recipe-container input a:hover {
+  color: #fed7aa;
+}
+.recipe-container input::placeholder {
+  color: #fed7aa; /* Change this to the color you want */
+  font-weight: bold;
+}
+
+.recipe-container a {
+  text-decoration: none; /* Removes underline */
+  color: #fed7aa;
+}
+
+.recipe-container button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #cc5e12;
+  color: #fed7aa;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-weight: bold;
+}
+
+.recipe-container button a {
+  text-decoration: none; /* Removes underline */
+  color: #fed7aa;
+}
+
+.recipe-container .transparent-button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+.recipe-container .transparent-button a {
+  color: #005eb8; /* Change this to the color you want */
+  font-weight: lighter;
+}
+.recipe-container .transparent-button a:hover {
+  font-weight: bold;
+}
+.recipe-container label {
+  display: flex;
+  margin: 0px 0px 0px 10px;
+  color: #fff;
+  border-radius: 10px;
+  align-items: center;
+  font-size: small;
+  text-align: center;
+}
+
+.recipe-container .input-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.recipe-container input[type="file"] {
+  display: none;
+}
+
+.recipe-container .text-area {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid #fed7aa;
+  border-radius: 0%;
+  background: transparent;
+  font-weight: bold;
+  color: #ffebd5;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.home-container {
+  margin: 0;
+  padding: 0;
+  background-image: url("./images/BGC.png"); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.loggo {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("./images/BasicLogo.png"); /* Replace with your image URL */
+}
+
+.category {
+  padding: 15px;
+  padding-right: 10px;
+  border-radius: 15px;
+  background-color: #f97315;
+  text-decoration: none; /* Removes underline */
+  color: #fff;
+  appearance: none;
 }

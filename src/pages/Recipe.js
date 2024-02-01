@@ -15,10 +15,10 @@ const Recipe = () => {
     queryFn: () => getRecipe(recipeId),
   });
   if (!recipe) return <div>Not found!</div>;
-  const { title, user, topic, body } = recipe;
+  const { title, user, ingredient, body } = recipe;
 
   return (
-    <div className="bg-orange-900 min-h-screen flex items-center justify-center">
+    <div className="bg-orange-900 min-h-screen flex items-center justify-center font-sans">
       <div className="max-w-md w-full px-6 py-8 bg-orange-800 rounded-md shadow-md">
         <div className="flex items-center mb-4">
           <img
@@ -30,10 +30,10 @@ const Recipe = () => {
         </div>
         <h3 className="text-xl text-white font-semibold mb-4">{title}</h3>
         <div className="mb-4">
-          <h4 className="text-lg text-white font-medium mb-2">Topics:</h4>
+          <h4 className="text-lg text-white font-medium mb-2">Ingredients:</h4>
           <ul className="list-disc list-inside text-white">
-            {topic?.map((topic, index) => (
-              <li key={index}>{topic}</li>
+            {ingredient?.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
             ))}
           </ul>
         </div>
