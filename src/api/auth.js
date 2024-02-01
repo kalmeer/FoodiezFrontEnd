@@ -1,14 +1,12 @@
 import instance from ".";
 
 const login = async (userInfo) => {
-  const { data } = await instance.post("/auth/login", userInfo);
+  const { data } = await instance.post("/api/user/signin", userInfo);
   return data;
 };
 
 const register = async (userInfo) => {
-  const formData = new FormData();
-  for (const key in userInfo) formData.append(key, userInfo[key]);
-  const { data } = await instance.post("/auth/register", formData);
+  const { data } = await instance.post("/api/user/signup", userInfo);
   console.log(data);
   return data;
 };
