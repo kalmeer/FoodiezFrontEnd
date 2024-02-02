@@ -1,3 +1,5 @@
+// AddRecipe.js
+
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { createRecipe } from "../api/recipes";
@@ -7,19 +9,17 @@ const AddRecipe = ({ show, onClose, onSave }) => {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [body, setBody] = useState("");
+  const [instructions, setinstructions] = useState("");
   const queryClient = useQueryClient();
+
   const { mutate: addRecipe } = useMutation({
-    mutationFn: () =>
-      createRecipe({
-        title,
-        ingredient: ingredients,
-        body,
-      }),
+    mutationFn: (recipeData) => createRecipe(recipeData),
     onSuccess: () => {
       queryClient.invalidateQueries(["recipes"]);
       onClose();
     },
   });
+
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
@@ -33,12 +33,10 @@ const AddRecipe = ({ show, onClose, onSave }) => {
   const handleBodyChange = (e) => {
     setBody(e.target.value);
   };
-  //
-  const [category, setCategory] = useState("");
-  const handleChange = (event) => {
-    setCategory(event.target.value);
-  };
 
+  const handleBodyChange1 = (e) => {
+    setinstructions(e.target.value);
+  };
   const handleAddIngredient = () => {
     setIngredients([...ingredients, ""]);
   };
@@ -51,10 +49,16 @@ const AddRecipe = ({ show, onClose, onSave }) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    addRecipe();
+    addRecipe({
+      name: title,
+      description: body,
+      instructions: instructions, // Update with your logic
+      image: "", // Update with your logic
+    });
     setTitle("");
     setIngredients([]);
     setBody("");
+    setinstructions("");
   };
 
   if (!show) {
@@ -68,14 +72,14 @@ const AddRecipe = ({ show, onClose, onSave }) => {
         <form onSubmit={handleFormSubmit}>
           <div className="mb-4">
             <label
-              htmlFor="title"
+              htmlFor="name"
               className="block text-white text-sm font-medium mb-2"
             >
-              Title
+              Name
             </label>
             <input
               type="text"
-              id="title"
+              id="name"
               value={title}
               onChange={handleTitleChange}
               className="w-full px-4 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -115,6 +119,15 @@ const AddRecipe = ({ show, onClose, onSave }) => {
             >
               Add Ingredient
             </button>
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="body1"
+              className="block text-white text-sm font-medium mb-2"
+            >
+              Body
+            </label>
+            <input onChange={handleBodyChange1}></input>
           </div>
           <div className="mb-6">
             <label

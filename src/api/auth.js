@@ -21,14 +21,9 @@ const register = async (userInfo) => {
   return data;
 };
 
-const me = async () => {
-  const { data } = await instance.get("/auth/me");
-  return data;
-};
-
 const getAllUsers = async () => {
-  const { data } = await instance.get("/auth/users");
+  const { data } = await instance.get("api/user");
   return data;
 };
 
-export { login, register, me, getAllUsers };
+export { login, register, getAllUsers };
