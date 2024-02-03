@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { login } from "../api/auth";
 import UserContext from "../context/UserContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({});
@@ -29,9 +29,9 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-orange-100 min-h-screen flex items-center justify-center font-sans login-container">
-      <div className="max-w-md w-full px-6 py-8 bg-orange-500 rounded-md shadow-md font-sans ">
-        <h2 className="text-3xl text-white font-semibold mb-6 font-sans">
+    <div className="bg-orange-100 min-h-screen flex items-center justify-center font-sans ">
+      <div className="max-w-md w-full px-6 py-8 bg-orange-500 rounded-md shadow-md font-sans login-container ">
+        <h2 className="text-3xl text-orange-100 font-semibold mb-6 font-sans">
           Login
         </h2>
         <form onSubmit={handleFormSubmit}>
@@ -57,14 +57,17 @@ const Login = () => {
               required
             />
           </div>
-          <div className="flex justify-center">
-            <button
-              type="submit"
-              className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
-            >
-              Login
-            </button>
-          </div>
+
+          <button
+            type="submit"
+            className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
+          >
+            Login
+          </button>
+          <br />
+          <button className="transparent-button text-orange-50">
+            <Link to={"/register"}>Not enrolled? Sign up now. {">"}</Link>
+          </button>
         </form>
       </div>
     </div>

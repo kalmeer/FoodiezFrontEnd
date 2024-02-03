@@ -19,10 +19,10 @@ const Navbar = () => {
           {/*  */}
 
           <div className="block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-baseline space-x-4 font-medium">
               <NavLink
                 to="/"
-                className="text-orange-100 hover:bg-orange-800 hover:text-white px-3 py-2 rounded-3xl text-xl font-medium"
+                className="text-orange-100 hover:bg-orange-800 hover:text-white px-3 py-2 rounded-3xl text-xl "
               >
                 Home
               </NavLink>
@@ -39,15 +39,14 @@ const Navbar = () => {
                 >
                 Users
               </NavLink> */}
-              {/*  */}
-              {user == true ? (
+              {user === true ? (
                 <NavLink
                   to="/"
                   onClick={() => {
                     deleteToken();
                     setUser(false);
                   }}
-                  className="text-orange-100 hover:bg-orange-800 hover:text-white px-3 py-2 rounded-3xl text-xl font-medium"
+                  className="text-orange-100 hover:bg-orange-800 hover:text-white px-3 py-2 rounded-3xl text-xl "
                 >
                   Logout
                 </NavLink>
@@ -55,23 +54,20 @@ const Navbar = () => {
                 <>
                   <NavLink
                     to="/login"
-                    className="text-orange-100 hover:bg-orange-800 hover:text-white px-3 py-2 rounded-3xl text-xl font-medium"
+                    className="text-orange-100 hover:bg-orange-800 hover:text-white px-3 py-2 rounded-3xl text-xl"
                   >
                     Login
                   </NavLink>
-                  <NavLink
+                  {/* <NavLink
                     to="/register"
-                    className="text-orange-100 hover:bg-orange-800 hover:text-white px-3 py-2 rounded-3xl text-xl font-medium"
+                    className="text-orange-100 hover:bg-orange-800 hover:text-white px-3 py-2 rounded-3xl text-xl "
                   >
                     Register
-                  </NavLink>
+                  </NavLink> */}
                 </>
               )}
-              {/*  */}
             </div>
           </div>
-
-          {/*  */}
         </div>
       </div>
     </nav>

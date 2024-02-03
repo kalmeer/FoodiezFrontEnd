@@ -20,14 +20,13 @@ body {
   height: 30px;
   margin-bottom: 10px;
   border: none;
-  border-bottom: 2px solid #fed7aa;
+  border-bottom: 2px solid #ffebd5;
   border-radius: 0%;
   background: transparent;
   font-weight: bold;
-  color: #ffebd5;
 }
 .login-container input a:hover {
-  color: #fed7aa;
+  color: #ffebd5;
 }
 .login-container input::placeholder {
   color: #fed7aa; /* Change this to the color you want */
@@ -44,7 +43,7 @@ body {
   padding: 10px;
   margin-top: 5px;
   background-color: #cc5e12;
-  color: #fed7aa;
+  color: #ffebd5;
   border: none;
   border-radius: 10px;
   outline: none;
@@ -63,20 +62,20 @@ body {
 }
 
 .login-container .transparent-button a {
-  color: #005eb8; /* Change this to the color you want */
   font-weight: lighter;
+  height: 0px;
 }
 .login-container .transparent-button a:hover {
-  font-weight: bold;
+  font-weight: 550;
+  color: #ffebd5;
 }
 .login-container label {
   display: flex;
-  margin: 0px 0px 0px 10px;
-  color: #fff;
-  border-radius: 10px;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: flex-end;
   font-size: small;
-  text-align: center;
+  text-align: flex-end;
+  color: #fed7aa;
 }
 
 .login-container .input-row {
@@ -89,7 +88,6 @@ body {
 }
 
 .Navbar {
-  background-color: #fff;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
@@ -100,13 +98,12 @@ body {
 .Navbar a {
   text-decoration: none; /* Removes underline */
   margin: 20px;
-  color: #1f5083;
   font-weight: bold;
   padding-bottom: 2px; /* Add space for the underline */
 }
 
 .Navbar a:hover {
-  border-bottom: 4px solid #005eb8; /* Adds underline on hover */
+  border-bottom: 4px solid; /* Adds underline on hover */
 }
 
 .recipe-container header {
@@ -164,7 +161,6 @@ body {
 }
 
 .recipe-container .transparent-button a {
-  color: #005eb8; /* Change this to the color you want */
   font-weight: lighter;
 }
 .recipe-container .transparent-button a:hover {
