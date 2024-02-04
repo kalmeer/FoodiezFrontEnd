@@ -15,7 +15,16 @@ const Recipe = () => {
     queryFn: () => getRecipe(recipeId),
   });
   if (!recipe) return <div>Not found!</div>;
-  const { title, user, ingredient, body } = recipe;
+  const {
+    name,
+    description,
+    instructions,
+    image,
+    user,
+    ingredients,
+    category,
+    title,
+  } = recipe;
 
   console.log(recipe.image);
 
@@ -30,7 +39,7 @@ const Recipe = () => {
           />
           <h2 className="text-2xl text-white font-semibold">{recipe.name}</h2>
         </div>
-        <h3 className="text-xl text-white font-semibold mb-4">{title}</h3>
+        <h3 className="text-xl text-white font-semibold mb-4">{name}</h3>
         <div className="mb-4">
           <h4 className="text-lg text-white font-medium mb-2">Ingredients:</h4>
           <ul className="list-disc list-inside text-white">
