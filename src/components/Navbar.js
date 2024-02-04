@@ -16,7 +16,6 @@ const Navbar = () => {
               </span>
             </Link>
           </div>
-          {/*  */}
 
           <div className="block">
             <div className="ml-10 flex items-baseline space-x-4 font-medium">
@@ -58,12 +57,12 @@ const Navbar = () => {
                   >
                     Login
                   </NavLink>
-                  {/* <NavLink
+                  <NavLink
                     to="/register"
                     className="text-orange-100 hover:bg-orange-800 hover:text-white px-3 py-2 rounded-3xl text-xl "
                   >
                     Register
-                  </NavLink> */}
+                  </NavLink>
                 </>
               )}
             </div>

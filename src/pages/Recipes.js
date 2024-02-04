@@ -40,7 +40,7 @@ const Recipes = () => {
       <div className="mb-5">
         <button
           onClick={onOpen}
-          className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors font-sans"
+          className="px-4 py-2 bg-orange-500 text-orange-100 rounded-md hover:bg-orange-600 transition-colors font-sans"
         >
           Add Recipe
         </button>

@@ -29,8 +29,8 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-orange-100 min-h-screen flex items-center justify-center font-sans ">
-      <div className="max-w-md w-full px-6 py-8 bg-orange-500 rounded-md shadow-md font-sans login-container ">
+    <div className="bg-orange-100 min-h-screen flex items-center justify-center font-sans  ">
+      <div className="max-w-md w-full px-6 py-8 bg-orange-500 rounded-md shadow-md font-sans  ">
         <h2 className="text-3xl text-orange-100 font-semibold mb-6 font-sans">
           Login
         </h2>
@@ -60,12 +60,12 @@ const Login = () => {
 
           <button
             type="submit"
-            className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
+            className="px-4 py-2 text-orange-500 hover:text-orange-500 hover:bg-orange-200 "
           >
             Login
           </button>
           <br />
-          <button className="transparent-button text-orange-50">
+          <button className="transparent-button ">
             <Link to={"/register"}>Not enrolled? Sign up now. {">"}</Link>
           </button>
         </form>

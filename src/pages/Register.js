@@ -34,16 +34,16 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-orange-100 min-h-screen flex items-center justify-center font-sans login-container">
+    <div className="bg-orange-100 min-h-screen flex items-center justify-center font-sans ">
       <div className="max-w-md w-full px-6 py-8 bg-orange-500 rounded-md shadow-md">
         <h2 className="text-3xl text-orange-100 font-semibold mb-6">
           Register
         </h2>
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit} className="login-container">
           <div
             className={`${
               userInfo.email ? "text-orange-500 " : "text-orange-700"
-            } text-end`}
+            } text-end font-semibold`}
           >
             *
           </div>
@@ -52,7 +52,7 @@ const Register = () => {
             id="email"
             name="email"
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-2 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
             placeholder="Email"
             required
           />
@@ -60,7 +60,7 @@ const Register = () => {
           <div
             className={`${
               userInfo.username ? "text-orange-500 " : "text-orange-700"
-            } text-end`}
+            } text-end font-semibold`}
           >
             *
           </div>
@@ -69,7 +69,7 @@ const Register = () => {
             id="username"
             name="username"
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-2 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
             placeholder="Username"
             required
           />
@@ -77,7 +77,7 @@ const Register = () => {
           <div
             className={`${
               userInfo.password ? "text-orange-500 " : "text-orange-700"
-            } text-end`}
+            } text-end font-semibold`}
           >
             *
           </div>
@@ -86,19 +86,19 @@ const Register = () => {
             id="password"
             name="password"
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-2 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
             placeholder="Password"
             required
           />
 
-          <div className="flex justify-center">
-            <button
-              type="submit"
-              className="px-4 py-2 bg-orange-500 text-orange-100 rounded-md  hover:bg-orange-600 transition-colors w-full"
-            >
-              Register
-            </button>
-          </div>
+          <br />
+          <br />
+          <button
+            type="submit"
+            className=" text-orange-500 hover:text-orange-500 hover:bg-orange-200 "
+          >
+            Register
+          </button>
         </form>
       </div>
     </div>
