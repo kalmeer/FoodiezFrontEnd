@@ -97,8 +97,10 @@
 .Navbar a:hover {
   border-bottom: 4px solid; /* Adds underline on hover */
 }
+
 .recipe-container {
-  padding: 15px;
+  height: 80vh;
+  border-radius: 10px;
   border-radius: 15px;
 }
 
@@ -112,14 +114,12 @@
 .recipe-container input {
   margin-left: 5px;
   width: 97%;
-  height: 30px;
+  /* height: 50px; */
   margin-bottom: 10px;
   border: none;
-  border-bottom: 2px solid #fed7aa;
-  border-radius: 0%;
-  background: transparent;
+  /* border-bottom: 2px solid #f97315; */
+  border-radius: 10px;
   font-weight: bold;
-  color: #ffebd5;
 }
 /* .recipe-container input::after {
   content: "";
@@ -129,15 +129,11 @@
   background: #fed7aa;
   margin: auto;
 } */
-*/ .recipe-container input a:hover {
+/* */
+.recipe-container input a:hover {
   color: #fed7aa;
 }
-.recipe-container input::placeholder {
-  color: #fed7aa; /* Change this to the color you want */
-  font-weight: bold;
-}
-
-.recipe-container a {
+*/ .recipe-container a {
   text-decoration: none; /* Removes underline */
   color: #fed7aa;
 }
@@ -157,11 +153,6 @@
 .Add-Ingredient-button {
   width: 10%; /* Adjust as needed */
   /* Add any other styles you want for the remove button */
-}
-.recipe-container {
-  width: 1000px;
-  height: 70vh;
-  border-radius: 10px;
 }
 
 .recipe-container button a {
@@ -187,37 +178,32 @@
 .recipe-container label {
   display: flex;
   margin: 0px 0px 0px 10px;
-  color: #fff;
   border-radius: 10px;
   align-items: center;
   font-size: small;
   text-align: center;
 }
 
-.recipe-container .input-row {
+/* .recipe-container .input-row {
   display: flex;
   justify-content: space-around;
-}
+} */
 
 .recipe-container input[type="file"] {
   display: none;
 }
 #instructions {
-  height: 100%;
   appearance: none;
   border: none;
 }
-.recipe-container textarea {
-  width: 98%;
+/* .recipe-container textarea {
   border: none;
   border-radius: 7px;
-  color: #fed7aa;
-  background-color: #ffebd5;
 }
 
 .recipe-container textarea::placeholder {
   color: #cc5e12;
-}
+} */
 
 .home-container {
   margin: 0;
@@ -240,13 +226,10 @@
 .category {
   display: flex;
   justify-content: center;
-  padding: 15px;
   border-radius: 15px;
-  background-color: #ffebd5;
+  height: 30px;
   width: 150px;
-  height: 50px;
   box-shadow: none; /* Remove the box shadow */
-  color: #f97315;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -254,24 +237,10 @@
 }
 .category input {
   width: 700px;
+  border-radius: 5px;
 }
-.category input::placeholder {
-  color: #f97315;
-  background-color: #f97315;
-}
+
 select {
   appearance: none;
   background-color: transparent; /* Set the background color to transparent */
-}
-
-.custom-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: none;
-  outline: none; /* Remove the outline */
-  box-shadow: none; /* Remove the box shadow */
-  padding: 0; /* Remove the padding */
-  margin: 0; /* Remove the margin */
-  font-size: 1em; /* Set the font size */
 }

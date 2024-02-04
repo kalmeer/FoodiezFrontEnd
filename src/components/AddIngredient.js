@@ -8,9 +8,9 @@ const AddIngredient = () => {
   };
 
   return (
-    <div className="category">
+    <div className="category bg-orange-200 text-orange-800">
       {!flag ? (
-        <select onChange={handleChange}>
+        <select onChange={handleChange} className="">
           <option value=" ">Select Ingredient</option>
           <option value="category1">Category 1</option>
           <option value="category2">Category 2</option>
@@ -20,7 +20,7 @@ const AddIngredient = () => {
       ) : (
         <input
           type="text"
-          className=" px-4 py-2 border border-orange-700 text-orange-500 rounded-md "
+          className=" px-1 category text-orange-800 placeholder-orange-300 bg-orange-100"
           placeholder="Type Ingredient"
           required
         />

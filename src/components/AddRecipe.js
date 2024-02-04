@@ -33,12 +33,6 @@ const AddRecipe = ({ show, onClose, onSave }) => {
     console.log(e.target.value);
   };
 
-  const handleIngredientChange = (e, index) => {
-    const updatedIngredients = [...ingredients];
-    updatedIngredients[index] = e.target.value;
-    setIngredients(updatedIngredients);
-  };
-
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
   };
@@ -90,12 +84,17 @@ const AddRecipe = ({ show, onClose, onSave }) => {
                 id="name"
                 value={title}
                 onChange={handleTitleChange}
-                className=" px-4 py-2 border-none text-2xl  rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className=" px-4 py-2 border-none bg-orange-100 placeholder-orange-300 text-2xl  rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
                 placeholder="Recipe Title"
                 required
               />
               <br />
-              <label for="file-input">Upload Image</label>
+              <label
+                for="file-input"
+                className=" bg-orange-300 font-semibold  text-orange-600 w-[50%] hover:bg-orange-400 hover:text-orange-700 px-10 py-10 text-2xl"
+              >
+                Upload Image
+              </label>
               <input
                 type="file"
                 onChange={handleImageChange}
@@ -103,19 +102,19 @@ const AddRecipe = ({ show, onClose, onSave }) => {
                 placeholder="image"
                 id="file-input"
               />
-
+              <br />
               <textarea
                 id="body"
                 value={body}
                 onChange={handleBodyChange}
-                className=" px-4 py-2 border-b border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className=" bg-orange-100 placeholder-orange-300 text-orange-800 placeholder:italic w-[98%] px-4 py-2 border-b border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 rows={5}
                 required
-                placeholder="Description"
+                placeholder="Type Description"
               />
             </div>
-            <div>
-              <header className="text-2xl text-orange-200 font-bold mb-2  border-orange-200">
+            <div className=" col-span-1 ">
+              <header className="text-2xl text-orange-100 font-bold mb-2 border-orange-200">
                 Instructions
               </header>
               <input
@@ -123,17 +122,21 @@ const AddRecipe = ({ show, onClose, onSave }) => {
                 id="instructions"
                 value={instructions}
                 onChange={handleBodyChange1}
-                className=" flex-col text-start px-4 py-2 border-none border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                placeholder="Instructions"
+                className=" flex-col text-start px-4 py-2 text-orange-800  placeholder:italic border-none bg-orange-100 placeholder-orange-300 border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                placeholder="Type Instructions"
                 required
               />
             </div>
 
-            <div className="mb-4">
-              <header className="text-2xl text-orange-200 font-bold mb-2 ">
+            <div className="mb-4 space-y-2">
+              <header className="text-2xl text-orange-100 font-bold mb-2 ">
                 Ingredients
               </header>
-              <br />
+
+              <AddIngredient />
+              <AddIngredient />
+              <AddIngredient />
+
               {ingredients.map((index) => (
                 <div
                   key={index}
@@ -143,7 +146,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
                   <button
                     type="button"
                     onClick={() => handleRemoveIngredient(index)}
-                    className="ml-2 px-2 py-1 bg-orange-100 text-orange-500 rounded-md hover:bg-red-600 transition-colors"
+                    className="ml-2 px-2 py-1 bg-red-600 text-orange-100 rounded-md hover:bg-red-700 transition-colors"
                   >
                     Remove
                   </button>
@@ -157,22 +160,21 @@ const AddRecipe = ({ show, onClose, onSave }) => {
                 Add Ingredient
               </button>
             </div>
-
-            <div>
-              <button
-                type="submit"
-                className="px-4 py-2 bg-orange-100 text-orange-500 rounded-md hover:bg-orange-800 hover:text-orange-100 transition-colors"
-              >
-                Save
-              </button>
-              <button
-                type="button"
-                onClick={onClose}
-                className="ml-2 px-4 py-2 bg-red-600 text-orange-100 rounded-md hover:bg-red-700 transition-colors"
-              >
-                Cancel
-              </button>
-            </div>
+          </div>
+          <div className=" flex relative  bottom-0  ">
+            <button
+              type="submit"
+              className="px-4 py-2 bg-orange-100 text-orange-500 rounded-md hover:bg-orange-800 hover:text-orange-100 transition-colors"
+            >
+              Save
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="ml-2 px-4 py-2 bg-red-600 text-orange-100 rounded-md hover:bg-red-700 transition-colors"
+            >
+              Cancel
+            </button>
           </div>
         </form>
       </div>
@@ -223,3 +225,9 @@ export default AddRecipe;
                   />
                 )} */
 }
+
+// const handleIngredientChange = (e, index) => {
+//   const updatedIngredients = [...ingredients];
+//   updatedIngredients[index] = e.target.value;
+//   setIngredients(updatedIngredients);
+// };
