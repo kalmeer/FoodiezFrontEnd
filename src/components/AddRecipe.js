@@ -12,6 +12,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
   const [instructions, setinstructions] = useState("");
   const queryClient = useQueryClient();
   const [category, setCategory] = useState(true);
+  const [image, setImage] = useState(null);
 
   const categoryStatus = (value) => {
     if (value === false) {
@@ -36,6 +37,10 @@ const AddRecipe = ({ show, onClose, onSave }) => {
     const updatedIngredients = [...ingredients];
     updatedIngredients[index] = e.target.value;
     setIngredients(updatedIngredients);
+  };
+
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
   };
 
   const handleBodyChange = (e) => {
@@ -90,15 +95,15 @@ const AddRecipe = ({ show, onClose, onSave }) => {
                 required
               />
               <br />
-              <textarea
-                id="body"
-                value={body}
-                onChange={handleBodyChange}
-                className=" px-4 py-2 border-b border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                rows={6}
-                required
-                placeholder="This place is for image"
+              <label for="file-input">Upload Image</label>
+              <input
+                type="file"
+                onChange={handleImageChange}
+                name="image"
+                placeholder="image"
+                id="file-input"
               />
+
               <textarea
                 id="body"
                 value={body}
