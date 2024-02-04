@@ -19,7 +19,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
       setCategory(false);
     }
   };
-
+  console.log(ingredients);
   const { mutate: addRecipe } = useMutation({
     mutationFn: (recipeData) => createRecipe(recipeData),
     onSuccess: () => {
@@ -44,8 +44,8 @@ const AddRecipe = ({ show, onClose, onSave }) => {
   const handleBodyChange1 = (e) => {
     setinstructions(e.target.value);
   };
-  const handleAddIngredient = () => {
-    setIngredients([...ingredients, ""]);
+  const handleAddIngredient = (e) => {
+    setIngredients([...ingredients, e.target.value]);
     if (category === false) setCategory(true);
   };
 
@@ -61,7 +61,8 @@ const AddRecipe = ({ show, onClose, onSave }) => {
       name: title,
       description: body,
       instructions: instructions, //
-      image: "", //
+      image: image,
+      ingredients: ingredients,
     });
     setTitle("");
     setIngredients([]);

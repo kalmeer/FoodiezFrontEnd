@@ -45,12 +45,31 @@ const Recipes = () => {
           >
             Your Email
           </label> */}
-          <button
+          <select
             id="dropdown-button"
             data-dropdown-toggle="dropdown"
             class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-orange-900 bg-orange-100  border-orange-100 rounded-s-lg hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-100 dark:bg-orange-700 dark:hover:bg-orange-600 dark:focus:ring-orange-700 dark:text-white dark:border-orange-600"
             type="button"
+            onChange={handleChange}
           >
+            <option onClick={handleChange} value="">
+              Select a category
+            </option>
+            <option onClick={handleChange} value="">
+              Asian
+            </option>
+            <option onClick={handleChange} value="">
+              Mexican
+            </option>
+            <option onClick={handleChange} value="">
+              Dinner
+            </option>
+            <option onClick={handleChange} value="">
+              Lunch
+            </option>
+            <option onClick={handleChange} value="">
+              Brunch
+            </option>
             All categories{" "}
             <svg
               class="w-2.5 h-2.5 ms-2.5"
@@ -67,7 +86,7 @@ const Recipes = () => {
                 d="m1 1 4 4 4-4"
               />
             </svg>
-          </button>
+          </select>
           <div
             id="dropdown"
             class="z-10 hidden bg-white divide-y divide-orange-100 rounded-lg shadow w-44 dark:bg-orange-700"

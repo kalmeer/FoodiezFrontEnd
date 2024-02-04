@@ -34,71 +34,84 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-orange-100 min-h-screen flex items-center justify-center font-sans ">
+    <div className="bg-orange-100 min-h-screen flex items-center justify-center font-sans login-container">
       <div className="max-w-md w-full px-6 py-8 bg-orange-500 rounded-md shadow-md">
-        <h2 className="text-3xl text-orange-100 font-semibold mb-6">
-          Register
-        </h2>
-        <form onSubmit={handleFormSubmit} className="login-container">
-          <div
-            className={`${
-              userInfo.email ? "text-orange-500 " : "text-orange-700"
-            } text-end font-semibold`}
-          >
-            *
+        <h2 className="text-3xl text-white font-semibold mb-6">Register</h2>
+        <form onSubmit={handleFormSubmit}>
+          <div className="mb-4">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="email"
+              required
+            />
           </div>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            onChange={handleChange}
-            className="w-full px-2 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-            placeholder="Email"
-            required
-          />
-
-          <div
-            className={`${
-              userInfo.username ? "text-orange-500 " : "text-orange-700"
-            } text-end font-semibold`}
-          >
-            *
+          <div className="mb-4">
+            <input
+              type="username"
+              id="username"
+              name="username"
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="Username"
+              required
+            />
           </div>
-          <input
-            type="username"
-            id="username"
-            name="username"
-            onChange={handleChange}
-            className="w-full px-2 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-            placeholder="Username"
-            required
-          />
-
-          <div
-            className={`${
-              userInfo.password ? "text-orange-500 " : "text-orange-700"
-            } text-end font-semibold`}
-          >
-            *
+          <div className="mb-4">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="Password"
+              required
+            />
           </div>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            onChange={handleChange}
-            className="w-full px-2 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-            placeholder="Password"
-            required
-          />
+          {/*  */}
+          <div className="mb-4">
+            <input
+              type="password"
+              id="confirmpassword"
+              name="confirmpassword"
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+          {/* jsinhtml */}
+          {/* <script>
+            {`${if(userInfo.password!=confirmpassword){<></>}else{}}`}
+          </script> */}
+          {/* jsinhtml */}
+          <div className="flex justify-center ">
+            {/*  */}
+            {userInfo.password != userInfo.confirmpassword ? (
+              <button
+                type="submit"
+                className="cursor-not-allowed text-orange-500 hover:text-orange-500 hover:bg-orange-200"
+              >
+                {/*  */}
+                {/*  */}
+                Register
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className=" text-orange-500 hover:text-orange-500 hover:bg-orange-200 "
+              >
+                {/*  */}
+                {/*  */}
+                Register
+              </button>
+            )}
 
-          <br />
-          <br />
-          <button
-            type="submit"
-            className=" text-orange-500 hover:text-orange-500 hover:bg-orange-200 "
-          >
-            Register
-          </button>
+            {/*  */}
+          </div>
         </form>
       </div>
     </div>
