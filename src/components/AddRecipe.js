@@ -113,10 +113,12 @@ const AddRecipe = ({ show, onClose, onSave }) => {
                 placeholder="Type Description"
               />
             </div>
+
             <div className=" col-span-1 ">
               <header className="text-2xl text-orange-100 font-bold mb-2 border-orange-200">
                 Instructions
               </header>
+
               <input
                 type="text"
                 id="instructions"

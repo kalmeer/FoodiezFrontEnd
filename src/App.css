@@ -244,3 +244,15 @@ select {
   appearance: none;
   background-color: transparent; /* Set the background color to transparent */
 }
+
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  outline: none; /* Remove the outline */
+  box-shadow: none; /* Remove the box shadow */
+  padding: 0; /* Remove the padding */
+  margin: 0; /* Remove the margin */
+  font-size: 1em; /* Set the font size */
+}

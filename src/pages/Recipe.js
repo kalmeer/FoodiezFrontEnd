@@ -39,12 +39,12 @@ const Recipe = () => {
           />
           <h2 className="text-2xl text-white font-semibold">{recipe.name}</h2>
         </div>
-        <h3 className="text-xl text-white font-semibold mb-4">{name}</h3>
+        <h3 className="text-xl text-white font-semibold mb-4">{user}</h3>
         <div className="mb-4">
           <h4 className="text-lg text-white font-medium mb-2">Ingredients:</h4>
           <ul className="list-disc list-inside text-white">
-            {ingredient?.map((ingredient, index) => (
-              <li key={index}>{ingredient}</li>
+            {ingredients?.map((ingredients, index) => (
+              <li key={index}>{ingredients}</li>
             ))}
           </ul>
         </div>
