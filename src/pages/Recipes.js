@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import RecipeItem from "../components/RecipeItem";
 import { getAllRecipes } from "../api/recipes";
 import { useQuery } from "@tanstack/react-query";
 import AddRecipe from "../components/AddRecipe";
+import UserContext from "../context/UserContext";
 
 const Recipes = () => {
   const {
@@ -19,6 +20,7 @@ const Recipes = () => {
   const [getCategories, setGetCategories] = useState([]);
   const [category, setCategory] = useState("");
   const [show, setShow] = useState(false);
+
   const onClose = () => setShow(false);
   const onOpen = () => setShow(true);
 
@@ -35,8 +37,9 @@ const Recipes = () => {
   const recipeList = recipes?.map((recipe) => (
     <RecipeItem key={recipe._id} {...recipe} />
   ));
+
   return (
-    <div className="p-5  bg-orange-100 font-sans">
+    <div className="p-5 bg-orange-100 font-sans">
       <form>
         <div className="flex items-centerjustify-center w-[50%]">
           <button

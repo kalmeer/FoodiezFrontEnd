@@ -5,6 +5,7 @@ import React, { useContext, useState } from "react";
 import { createRecipe } from "../api/recipes";
 import AddIngredient from "./AddIngredient";
 import UserContext from "../context/UserContext";
+import AddCategory from "./AddCategory";
 
 const AddRecipe = ({ show, onClose, onSave }) => {
   const [title, setTitle] = useState("");
@@ -74,7 +75,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
     setImage(null);
     setUser();
   };
-
+  if (!user) return;
   if (!show) {
     return null;
   }
@@ -85,8 +86,8 @@ const AddRecipe = ({ show, onClose, onSave }) => {
         onSubmit={handleFormSubmit}
         className=" flex justify-center bg-orange-500 items-center rounded-md shadow-md p-6 overflow-scroll w-[90%] h-[100%] "
       >
-        <div className=" grid grid-cols-10 gap-4 bg-orange-400 w-[100%] h-[100%]">
-          <div className=" flex flex-col col-span-3 bg-orange-500 items-center justify-around h-full ">
+        <div className=" grid grid-cols-10 gap-4  w-[100%] h-[100%]">
+          <div className=" flex flex-col col-span-3 bg-orange-500 items-center gap-1 h-full ">
             <input
               type="text"
               id="name"
@@ -97,7 +98,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
               required
             />
             <br />
-            <div className=" w-[80%] h-[10%] relative">
+            <div className=" w-[80%] h-[3%] relative">
               <label
                 className="flex justify-center items-center rounded-lg font-medium bg-orange-400 text-orange-900 "
                 for="file_input"
@@ -118,10 +119,10 @@ const AddRecipe = ({ show, onClose, onSave }) => {
               id="body"
               value={body}
               onChange={handleBodyChange}
-              className=" w-[80%]  bg-orange-200 placeholder-orange-300 text-orange-800 placeholder:italic  px-4 py-2 border-b border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-              rows={5}
+              className=" w-[80%]  bg-orange-100 placeholder-orange-300 text-orange-800 placeholder:italic  px-4 py-2 border-b border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              rows={8}
               required
-              placeholder="Type Description"
+              placeholder="Type Brief Description"
             />
           </div>
 
@@ -129,7 +130,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
             <header className=" h-[10%] text-2xl text-orange-100 font-bold space-x-2 ">
               Ingredients
             </header>
-            <div className=" h-[90%] flex bg-orange-100 flex-col  justify-between ">
+            <div className=" h-[90%] flex flex-col  justify-between ">
               <div className="flex flex-col  text-orange-700  h-full gap-2">
                 <div className="flex flex-row">
                   <AddIngredient /> {"*"}
@@ -176,10 +177,11 @@ const AddRecipe = ({ show, onClose, onSave }) => {
                 >
                   Add Ingredient
                 </button>
+                <AddCategory />
               </div>
             </div>
           </div>
-          <div className=" col-span-5 flex flex-col justify-between ">
+          <div className=" col-span-5 flex flex-col justify-between gap-1">
             <header className="text-2xl text-orange-100 font-bold mb-2 border-orange-200">
               Instructions
             </header>
@@ -194,7 +196,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
               placeholder="Type Instructions"
               required
             />
-            <div>
+            <div className="flex justify-end">
               <button
                 type="submit"
                 className="px-4 py-2 bg-orange-100 text-orange-500 rounded-md hover:bg-orange-800 hover:text-orange-100 transition-colors"
