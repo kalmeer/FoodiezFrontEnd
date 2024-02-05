@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="bg-orange-100 min-h-screen flex items-center justify-center font-sans home-container  ">
+    <div className="min-h-screen flex items-center w-[100%] justify-center font-sans home-container fixed  ">
       <div className="bg-orange-200 bg-opacity-70 hover:bg-opacity-80  p-4 rounded-2xl max-w-5xl text-center">
         <h1 className="text-6xl text-orange-700 font-bold mb-8 mt-3 ">
           Welcome To Foodiez

@@ -26,10 +26,10 @@ const Recipe = () => {
     title,
   } = recipe;
 
-  console.log(recipe.image);
+  //console.log(recipe.image);
 
   return (
-    <div className="bg-orange-900 min-h-screen flex items-center justify-center font-sans">
+    <div className="bg-orange-900 min-h-screen flex items-center justify-center home-container font-sans">
       <div className="max-w-md w-full px-6 py-8 bg-orange-800 rounded-md shadow-md">
         <div className="flex items-center mb-4">
           <img

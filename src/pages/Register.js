@@ -8,6 +8,7 @@ const Register = () => {
   const [userInfo, setUserInfo] = useState({});
   const [user, setUser] = useContext(UserContext);
   const navigate = useNavigate();
+  const [confirmpassword, setConfirmpassword] = useState("");
 
   const { mutate } = useMutation({
     mutationKey: ["register"],
@@ -21,6 +22,10 @@ const Register = () => {
     },
   });
 
+  const handleConfirmpassword = (e) => {
+    setConfirmpassword(e.target.value);
+  };
+
   const handleChange = (e) => {
     console.log(userInfo);
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
@@ -28,8 +33,11 @@ const Register = () => {
   useEffect(() => {
     if (user) navigate("/");
   }, [user]);
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    if (userInfo.password !== confirmpassword) alert("Passwords do not match");
+
     mutate();
   };
 
@@ -90,9 +98,25 @@ const Register = () => {
             placeholder="Password"
             required
           />
+          <div
+            className={`${
+              confirmpassword ? "text-orange-500 " : "text-orange-700"
+            } text-end font-semibold`}
+          >
+            *
+          </div>
+          <div className="mb-4">
+            <input
+              type="password"
+              id="confirmpassword"
+              name="confirmpassword"
+              onChange={handleConfirmpassword}
+              className="w-full px-4 py-2 border border-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
 
-          <br />
-          <br />
           <button
             type="submit"
             className=" text-orange-500 hover:text-orange-500 hover:bg-orange-200 "
