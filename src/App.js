@@ -8,13 +8,19 @@ import Recipes from "./pages/Recipes";
 import Recipe from "./pages/Recipe";
 import Users from "./pages/Users";
 import { clear } from "@testing-library/user-event/dist/clear";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UserContext from "./context/UserContext";
 import { NotFound } from "./components/NotFound";
 
 function App() {
   const [user, setUser] = useState(false);
 
+  useEffect(() => {
+    const user = localStorage.getItem("token");
+    if (user) {
+      setUser(true);
+    }
+  });
   return (
     <UserContext.Provider value={[user, setUser]}>
       <div className="App font-mono ">
