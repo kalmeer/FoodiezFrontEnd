@@ -42,7 +42,7 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-orange-100 min-h-screen flex items-center justify-center font-sans ">
+    <div className="p-5 bg-orange-100 min-h-screen flex items-center justify-center font-sans ">
       <div className="max-w-md w-full px-6 py-8 bg-orange-500 rounded-md shadow-md">
         <h2 className="text-3xl text-orange-100 font-semibold mb-6">
           Register

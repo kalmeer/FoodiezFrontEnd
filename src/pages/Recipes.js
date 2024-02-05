@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RecipeItem from "../components/RecipeItem";
 import { getAllRecipes } from "../api/recipes";
 import { useQuery } from "@tanstack/react-query";
 import AddRecipe from "../components/AddRecipe";
+
 const Recipes = () => {
   const {
     data: recipes,
@@ -14,7 +15,7 @@ const Recipes = () => {
   });
   const [showCategories, setShowCategories] = useState(true);
   const [showAddRecipe, setShowAddRecipe] = useState(true);
-
+  const [getCategories, setGetCategories] = useState([]);
   const [category, setCategory] = useState("");
   const [show, setShow] = useState(false);
   const onClose = () => setShow(false);
@@ -23,21 +24,20 @@ const Recipes = () => {
   const handleChange = (event) => {
     setCategory(event.target.value);
   };
+  useEffect(() => {
+    if (recipes) {
+      const ccategories = recipes.map((recipe) => recipe.category);
+      setGetCategories(ccategories);
+    }
+  }, [recipes]);
 
   const recipeList = recipes?.map((recipe) => (
     <RecipeItem key={recipe._id} {...recipe} />
   ));
   return (
-    <div className="p-3 min-h-screen bg-orange-100 font-sans home-container">
+    <div className="p-5 min-h-screen bg-orange-100 font-sans home-container">
       <form>
         <div className="flex items-centerjustify-center w-[50%]">
-          {/* <label
-            for="search-dropdown"
-            class="mb-2 text-sm font-medium text-orange-900 sr-only dark:text-white"
-          >
-            Your Email
-          </label> */}
-          {/* {showCategories && ( */}
           <button
             id="dropdown-button"
             data-dropdown-toggle="dropdown"
