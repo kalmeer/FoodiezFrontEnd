@@ -19,6 +19,11 @@ const createRecipe = async (recipeInfo) => {
     formData.append("description", recipeInfo.description);
     formData.append("instructions", recipeInfo.instructions);
 
+    console.log(recipeInfo.ingredients);
+    recipeInfo.ingredients?.forEach((ingredient) => {
+      formData.append("ingredients", ingredient);
+    });
+
     // Append image file
     if (recipeInfo.image) {
       formData.append("image", recipeInfo.image);

@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { getRecipe } from "../api/recipes";
+import { BASE_URL } from "../api";
 
 const Recipe = () => {
   const { recipeId } = useParams();
@@ -33,7 +34,7 @@ const Recipe = () => {
       <div className="max-w-md w-full px-6 py-8 bg-orange-800 rounded-md shadow-md">
         <div className="flex items-center mb-4">
           <img
-            src={recipe?.image}
+            src={`${BASE_URL}/${recipe.image}`}
             alt="recipe"
             className="w-10 h-10 rounded-full mr-2"
           />
