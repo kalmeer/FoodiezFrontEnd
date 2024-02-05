@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import RecipeItem from "../components/RecipeItem";
 import { getAllRecipes } from "../api/recipes";
 import { useQuery } from "@tanstack/react-query";
 import AddRecipe from "../components/AddRecipe";
+import UserContext from "../context/UserContext";
 
 const Recipes = () => {
   const {
@@ -13,6 +14,7 @@ const Recipes = () => {
     queryKey: ["recipes"],
     queryFn: getAllRecipes,
   });
+  const [user, setUser] = useContext(UserContext);
   const [showCategories, setShowCategories] = useState(true);
   const [showAddRecipe, setShowAddRecipe] = useState(true);
   const [getCategories, setGetCategories] = useState([]);
@@ -103,7 +105,7 @@ const Recipes = () => {
       <br />
       {/* Add recipe button */}
       <div className="mb-5">
-        {showAddRecipe && (
+        {user && (
           <button
             onClick={() => {
               onOpen();
