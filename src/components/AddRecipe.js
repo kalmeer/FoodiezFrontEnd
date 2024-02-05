@@ -1,9 +1,10 @@
 // AddRecipe.js
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { createRecipe } from "../api/recipes";
 import AddIngredient from "./AddIngredient";
+import UserContext from "../context/UserContext";
 
 const AddRecipe = ({ show, onClose, onSave }) => {
   const [title, setTitle] = useState("");
@@ -13,6 +14,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
   const queryClient = useQueryClient();
   const [category, setCategory] = useState(true);
   const [image, setImage] = useState(null);
+  const [user, setUser] = useContext(UserContext);
 
   const categoryStatus = (value) => {
     if (value === false) {
@@ -67,6 +69,8 @@ const AddRecipe = ({ show, onClose, onSave }) => {
     setIngredients([]);
     setBody("");
     setinstructions("");
+    setImage(null);
+    setUser();
   };
 
   if (!show) {
