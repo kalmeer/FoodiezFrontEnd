@@ -10,6 +10,7 @@ import Users from "./pages/Users";
 import { clear } from "@testing-library/user-event/dist/clear";
 import { useState } from "react";
 import UserContext from "./context/UserContext";
+import { NotFound } from "./components/NotFound";
 
 function App() {
   const [user, setUser] = useState(false);
@@ -25,6 +26,7 @@ function App() {
           <Route path="/login" Component={Login} />
           <Route path="/register" Component={Register} />
           <Route path="/users" Component={Users} />
+          <Route path="/*" Component={NotFound} />
         </Routes>
       </div>
     </UserContext.Provider>

@@ -44,7 +44,7 @@ const Recipe = () => {
         <div className="mb-4">
           <h4 className="text-lg text-white font-medium mb-2">Ingredients:</h4>
           <ul className="list-disc list-inside text-white">
-            {ingredients?.map((ingredients, index) => (
+            {recipe?.ingredients?.map((ingredients, index) => (
               <li key={index}>{ingredients}</li>
             ))}
           </ul>

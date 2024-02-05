@@ -44,6 +44,7 @@ const Recipes = () => {
             data-dropdown-toggle="dropdown"
             class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-orange-400 bg-orange-500  border-orange-500 rounded-s-lg hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-500 dark:bg-orange-500 dark:hover:bg-orange-500 dark:focus:ring-orange-500 dark:text-orange-100 dark:border-orange-500"
             type="button"
+            onChange={handleChange}
           >
             Serach categories
             <svg
