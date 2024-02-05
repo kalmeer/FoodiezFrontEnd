@@ -35,7 +35,7 @@ const Recipes = () => {
     <RecipeItem key={recipe._id} {...recipe} />
   ));
   return (
-    <div className="p-5 min-h-screen bg-orange-100 font-sans home-container">
+    <div className="p-5  bg-orange-100 font-sans">
       <form>
         <div className="flex items-centerjustify-center w-[50%]">
           <button
@@ -117,10 +117,11 @@ const Recipes = () => {
       </div>
 
       {/* Recipe list */}
-      <div className="flex flex-wrap gap-3 font-sans">{recipeList}</div>
 
       {/* Add recipe modal */}
       <AddRecipe show={show} onClose={onClose} onSave={() => {}} />
+      <br />
+      <div className="flex flex-wrap gap-3 font-sans">{recipeList}</div>
     </div>
   );
 };
