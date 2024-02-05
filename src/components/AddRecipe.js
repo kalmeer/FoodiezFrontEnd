@@ -78,11 +78,11 @@ const AddRecipe = ({ show, onClose, onSave }) => {
     return null;
   }
   return (
-    <div className="  flex items-center justify-center  h-[70%]">
+    <div className="flex items-center justify-center h-[70%]">
       {/* form*/}
       <form
         onSubmit={handleFormSubmit}
-        className=" flex justify-center bg-orange-500 items-center rounded-md  shadow-md  p-6 overflow-scroll w-[90%] h-[100%] "
+        className=" flex justify-center bg-orange-500 items-center rounded-md shadow-md p-6 overflow-scroll w-[90%] h-[100%] "
       >
         <div className=" grid grid-cols-10 gap-4 bg-orange-400 w-[100%] h-[100%]">
           <div className=" flex flex-col col-span-3 bg-orange-500 items-center justify-around h-full ">
@@ -96,7 +96,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
               required
             />
             <br />
-            <div className="bg-orange-800  w-[80%] h-[10%]">
+            <div className=" w-[80%] h-[10%] relative">
               <label
                 className="flex justify-center items-center rounded-lg font-medium bg-orange-400 text-orange-900 "
                 for="file_input"
@@ -105,7 +105,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
               </label>
               <input
                 type="file"
-                className=" hidden rounded-sm	"
+                className="  rounded-sm 	absolute top-0 opacity-0"
                 onChange={handleImageChange}
                 name="image"
                 placeholder="image"
@@ -129,7 +129,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
               Ingredients
             </header>
             <div className=" h-[90%] flex bg-orange-100 flex-col  justify-between ">
-              <div className="flex-col justify-between text-orange-700 ">
+              <div className="flex flex-col  text-orange-700  h-full gap-2">
                 <div className="flex flex-row">
                   <AddIngredient /> {"*"}
                 </div>
@@ -143,7 +143,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
                 {ingredients.map((index) => (
                   <div
                     key={index}
-                    className="flex items-center  text-orange-700 "
+                    className="flex items-center  text-orange-700 gap-2"
                   >
                     <AddIngredient categoryStatus={categoryStatus} />
                     <button

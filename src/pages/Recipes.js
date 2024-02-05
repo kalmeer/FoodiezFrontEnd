@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import RecipeItem from "../components/RecipeItem";
 import { getAllRecipes } from "../api/recipes";
 import { useQuery } from "@tanstack/react-query";
 import AddRecipe from "../components/AddRecipe";
-import UserContext from "../context/UserContext";
 
 const Recipes = () => {
   const {
@@ -14,7 +13,7 @@ const Recipes = () => {
     queryKey: ["recipes"],
     queryFn: getAllRecipes,
   });
-  const [user, setUser] = useContext(UserContext);
+
   const [showCategories, setShowCategories] = useState(true);
   const [showAddRecipe, setShowAddRecipe] = useState(true);
   const [getCategories, setGetCategories] = useState([]);
@@ -25,7 +24,6 @@ const Recipes = () => {
 
   const handleChange = (event) => {
     setCategory(event.target.value);
-    console.log(event.target.value);
   };
   useEffect(() => {
     if (recipes) {
@@ -73,7 +71,6 @@ const Recipes = () => {
             <input
               type="search"
               id="search-dropdown"
-              onChange={handleChange}
               class="block p-2.5 w-full z-20 text-sm text-orange-800 bg-orange-100 rounded-e-lg border-s-orange-50 border-s-2 border border-orange-500 focus:ring-orange-500 focus:border-orange-500 dark:bg-orange-300 dark:border-s-orange-500  dark:border-orange-500 dark:placeholder-orange-600  dark:text-white dark:focus:border-orange-500"
               placeholder="Type Recipe or Category"
               requiorange
@@ -105,7 +102,7 @@ const Recipes = () => {
       <br />
       {/* Add recipe button */}
       <div className="mb-5">
-        {user && (
+        {showAddRecipe && (
           <button
             onClick={() => {
               onOpen();
